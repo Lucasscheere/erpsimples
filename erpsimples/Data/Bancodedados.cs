@@ -11,6 +11,7 @@ public class Bancodedados : DbContext
     }
 
     public DbSet<Produto> Produtos { get; set; }
-    public DbSet<Vendedor> Vendedores { get; set; }
+    public DbSet<Vendedor> Venda { get; set; }
     public DbSet<Cliente> Clientes { get; set; }
+    public DbSet<Venda> Vendas { get; set; }
 }

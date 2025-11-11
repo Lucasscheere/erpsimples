@@ -16,7 +16,7 @@ public class VendedorController : ControllerBase
     }
 
     [HttpGet]
-    public IActionResult GetAll() => Ok(_context.Vendedores.ToList());
+    public IActionResult GetAll() => Ok(_context.Venda.ToList());
 
     [HttpGet("{id}")]
     public IActionResult GetById(int id)
@@ -28,7 +28,7 @@ public class VendedorController : ControllerBase
     [HttpPost]
     public IActionResult Create(Vendedor vendedor)
     {
-        _context.Vendedores.Add(vendedor);
+        _context.Venda.Add(vendedor);
         _context.SaveChanges();
         return CreatedAtAction(nameof(GetById), new { id = vendedor.IdVendedor }, vendedor);
     }
@@ -37,7 +37,7 @@ public class VendedorController : ControllerBase
     public IActionResult Update(int id, Vendedor vendedor)
     {
         if (id != vendedor.IdVendedor) return BadRequest();
-        _context.Vendedores.Update(vendedor);
+        _context.Venda.Update(vendedor);
         _context.SaveChanges();
         return NoContent();
     }
@@ -45,9 +45,9 @@ public class VendedorController : ControllerBase
     [HttpDelete("{id}")]
     public IActionResult Delete(int id)
     {
-        var vendedor = _context.Vendedores.Find(id);
+        var vendedor = _context.Venda.Find(id);
         if (vendedor == null) return NotFound();
-        _context.Vendedores.Remove(vendedor);
+        _context.Venda.Remove(vendedor);
         _context.SaveChanges();
         return NoContent();
     }

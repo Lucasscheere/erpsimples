@@ -15,12 +15,7 @@ builder.Services.AddSwaggerGen(c =>
     {
         Title = "ERP Simples API",
         Version = "v1",
-        Description = "API para gerenciamento de produtos",
-        Contact = new OpenApiContact
-        {
-            Name = "Seu Nome",
-            Email = "seuemail@exemplo.com"
-        }
+        Description = ""
     });
 });
 
